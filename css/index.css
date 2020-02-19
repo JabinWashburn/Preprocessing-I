@@ -21,6 +21,17 @@ body {
   font-family: 'Righteous', serif;
   padding: 0 30%;
 }
+@media (max-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+}
 ol,
 ul {
   list-style: none;
@@ -47,16 +58,18 @@ table {
 html,
 body {
   height: 100%;
+  background-color: #ECEBEB;
 }
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 10%;
+  color: #737373;
 }
 header nav a {
   text-decoration: none;
-  color: grey;
+  color: #737373;
   border: solid 2px #fac000;
 }
 header nav a:hover {
@@ -68,16 +81,32 @@ header img {
 }
 #content {
   display: flex;
+  color: #737373;
 }
 #content #leftContent {
   width: 49%;
   margin: 0 2%;
+  margin-bottom: 2%;
   padding-right: 1%;
-  border-right: 2px solid black;
+  border-right: 2px solid #fac000;
 }
 #content #rightContent {
   width: 49%;
   margin: 0 2%;
+  margin-bottom: 2%;
+}
+#content h3,
+#content h4 {
+  color: #fac000;
+  margin: 30px 0;
+}
+hr {
+  border: none;
+  margin-bottom: 2%;
+  height: 2px;
+  color: #fac000;
+  background-color: #fac000;
+  margin-bottom: 50px;
 }
 @font-face {
   font-family: 'Righteous';

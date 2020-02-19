@@ -33,6 +33,14 @@ body {
 	line-height: 1;
 	font-family: @main-font; 
 	padding: 0 30%;
+	@media(max-width: 500px){
+		display: flex;
+ 		flex-direction: column;
+ 		width: 100%;
+		.centerStuff;
+ 		padding: 0;
+ 		margin: 0;
+	}
 }
 ol, ul {
 	list-style: none;
@@ -57,19 +65,21 @@ table {
 
 html, body {
 	height: 100%;
+	background-color: @background-color;
 }
 header{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-bottom: 10%;
+	color: @accent-color;
 	nav a{
 		text-decoration: none;
-		color: grey;
+		color: @accent-color;
 		&:hover {
-			color: #fac000;
+			color: @main-color;
 		}
-		border: solid 2px #fac000;
+		border: solid 2px  @main-color;
 	}
 	
 	img{
@@ -79,18 +89,41 @@ header{
 }
 #content{
 	display: flex;
+	color: @accent-color;
 	#leftContent{
-		width: 49%;
-		margin: 0 2%;
+		.contentStyle();
 		padding-right: 1%;
-		border-right: 2px solid black
+		border-right: 2px solid @main-color;
 	}
 	#rightContent{
-		width: 49%;
-		margin: 0 2%;
-	
+		.contentStyle();
 	}
+	h3,h4{
+		color: @main-color;
+		margin: 30px 0;
+	}
+}
+hr{
+	border: none;
+	margin-bottom: 2%;
+    height: 2px;
+    color: @main-color; 
+	background-color: @main-color;
+	margin-bottom: 50px;
+}
+
+.contentStyle(){
+	width: 49%;
+	margin: 0 2%;
+	margin-bottom: 2%;
 }
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 
 @main-font: 'Righteous', serif;
+@main-color: #fac000;
+@accent-color: #737373;
+@background-color: #ECEBEB;
+.centerStuff(){
+	align-content: center;
+	align-items: center;
+}
