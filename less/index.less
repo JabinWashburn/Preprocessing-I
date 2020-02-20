@@ -4,26 +4,26 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+// html, body, div, span, applet, object, iframe,
+// h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+// a, abbr, acronym, address, big, cite, code,
+// del, dfn, em, img, ins, kbd, q, s, samp,
+// small, strike, strong, sub, sup, tt, var,
+// b, u, i, center,
+// dl, dt, dd, ol, ul, li,
+// fieldset, form, label, legend,
+// table, caption, tbody, tfoot, thead, tr, th, td,
+// article, aside, canvas, details, embed, 
+// figure, figcaption, footer, header, hgroup, 
+// menu, nav, output, ruby, section, summary,
+// time, mark, audio, video {
+// margin: 0;
+// padding: 0;
+// border: 0;
+// font-size: 100%;
+// font: inherit;
+// vertical-align: baseline;
+// }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -31,6 +31,16 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: @main-font; 
+	padding: 0 30%;
+	@media(max-width: 500px){
+		display: flex;
+ 		flex-direction: column;
+ 		width: 100%;
+		.centerStuff;
+ 		padding: 0;
+ 		margin: 0;
+	}
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +64,66 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+	background-color: @background-color;
+}
+header{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10%;
+	color: @accent-color;
+	nav a{
+		text-decoration: none;
+		color: @accent-color;
+		&:hover {
+			color: @main-color;
+		}
+		border: solid 2px  @main-color;
+	}
+	
+	img{
+		padding-top: 1%;
+		max-width: 100%;
+	}
+}
+#content{
+	display: flex;
+	color: @accent-color;
+	#leftContent{
+		.contentStyle();
+		padding-right: 1%;
+		border-right: 2px solid @main-color;
+	}
+	#rightContent{
+		.contentStyle();
+	}
+	h3,h4{
+		color: @main-color;
+		margin: 30px 0;
+	}
+}
+hr{
+	border: none;
+	margin-bottom: 2%;
+    height: 2px;
+    color: @main-color; 
+	background-color: @main-color;
+	margin-bottom: 50px;
 }
 
+.contentStyle(){
+	width: 49%;
+	margin: 0 2%;
+	margin-bottom: 2%;
+}
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+@main-font: 'Righteous', serif;
+@main-color: #fac000;
+@accent-color: #737373;
+@background-color: #ECEBEB;
+.centerStuff(){
+	align-content: center;
+	align-items: center;
+}
